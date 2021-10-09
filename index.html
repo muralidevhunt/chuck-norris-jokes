@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="main.js"></script> -->
+    <title>chuck norris jokes</title>
+</head>
+
+<body>
+    <h1 class="title">
+        <a href="#"> chuck norris jokes</a>
+    </h1>
+    <!-- <img src="1.jpg" id="logo" alt=""> -->
+    <div class="content">
+        <a href="#" class="btn" id="logo">click joke</a>
+    </div>
+    <div id="data"></div>
+
+    <!-- javascript data -->
+    <script>
+        const data = document.getElementById("data");
+        const logo = document.getElementById("logo");
+        function randomFact() {
+            var xmlhttp = new XMLHttpRequest();
+            var url = "https://api.chucknorris.io/jokes/random";
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var json = JSON.parse(this.responseText);
+                    parseResponse(json);
+                }
+            };
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }
+        function parseResponse(json) {
+            data.innerHTML = "<b>" + json["value"] + "</b>";
+        }
+
+        logo.addEventListener("click", function () {
+            randomFact();
+        });
+        randomFact();
+    </script>
+</body>
+
+</html>
