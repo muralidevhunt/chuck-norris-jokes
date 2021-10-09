@@ -7,13 +7,16 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
+    width: 100%;
+    min-height: 100vh;
     background: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1) no-repeat fixed;
 }
  
 .title {
     display: flex;
     justify-content: center;
-    font-size: 6rem;
+    align-items: center;
+    font-size: 6vw;
     background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -22,7 +25,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: -20px;
 
 }
@@ -38,8 +41,8 @@ body{
     border-radius: 28px 15px;
     font-family: Arial;
     color: #ffffff;
-    font-size: 20px;
-    padding: 10px 20px 10px 20px;
+    font-size: 1.2rem;
+    padding: 10px 20px;
     text-decoration: none;
     transition: 0.3s;
 }
@@ -55,14 +58,84 @@ body{
     border-radius: 5px;
 }
 #data{
-    width: 600px;
+    width: 60%;
     border: 1px dashed black;
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
     margin: 0 auto;
     margin-top: 50px;
     padding: 20px;
 }
+
+@media(max-width:640px){
+    .title{
+        font-size: 7vw;
+    }
+    .btn{
+        font-size: .8rem;
+        padding: .7em;
+    }
+    #data{
+        width: 80%;
+        font-size: .8rem;
+    }
+    img{
+        padding-left: 1em;
+        padding-bottom: 2rem;
+    }
+}
+@media(max-width:1100px){
+    #data{
+        font-size: .8rem;
+    }
+}
+img{
+    width: 300px;
+    position: absolute;
+    right: 20%;
+    padding-top: 1rem;
+}
+/* span{
+    position: absolute;
+    font-size: 2rem;
+    top: 55%;
+    right: 40%;
+} */
+
+.social{
+    display: flex;
+    justify-content: center;
+}
+ul li{
+    list-style: none;
+}
+ul li a{
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 3rem;
+    color: #005C81;
+    transform: scale(0.5);
+    transition: 0.2s;
+}
+.social li a:hover{
+    transform: scale(0.7) translateY(-15px);
+}
+ul li:nth-child(1) a:hover{
+    color: #3b5998;
+}
+ul li:nth-child(2) a:hover{
+    color: #1DA1F2;
+}
+ul li:nth-child(3) a:hover{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.footer{
+    position: sticky;
+    top: 100%;
+}
+
 
 /* #logo{
     width: 320px;
